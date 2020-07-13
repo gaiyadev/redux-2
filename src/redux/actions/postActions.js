@@ -4,6 +4,7 @@ const URL = 'https://jsonplaceholder.typicode.com/posts';
 
 // Sending all action to post reducer
 // fetchPost will be imported in the AllPost Component
+//passing to postReduccer
 
 export const fetchPost = () => dispatch => {
     // console.log('fetching');

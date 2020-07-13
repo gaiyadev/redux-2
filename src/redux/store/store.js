@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../../redux/reducers/index';
 
-//Central app store
+//Central app store (boilerplate)
 
 const initialState = {};
 
