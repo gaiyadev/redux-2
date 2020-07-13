@@ -8,6 +8,12 @@ class AllPost extends Component {
         this.props.fetchPost();
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.newPost) {
+            this.props.posts.unshift(nextProps.newPost)
+        }
+    }
+
     render() {
         const allPost = this.props.posts.map(post => {
             return (
@@ -28,12 +34,14 @@ class AllPost extends Component {
 
 AllPost.propTypes = {
     fetchPost: PropTypes.func.isRequired,
-    posts: PropTypes.array.isRequired
+    posts: PropTypes.array.isRequired,
+    newPost: PropTypes.object
 }
 
 //getting state from redux and mapping to this component
 const mapStateToProps = state => ({
-    posts: state.posts.items
+    posts: state.posts.items,
+    newPost: state.posts.item
 });
 
 export default connect(mapStateToProps, { fetchPost })(AllPost);
